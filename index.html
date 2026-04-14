@@ -1,0 +1,1281 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dy Paulo — Produtos de Limpeza</title>
+  <meta name="description" content="Dy Paulo — Indústria e comércio de produtos de limpeza e utensílios domésticos. Qualidade e tradição desde a fundação. Atendemos consumidores, mercados, lojas e empresas.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Dy Paulo — Produtos de Limpeza">
+  <meta property="og:description" content="Indústria e comércio de produtos de limpeza e utensílios domésticos. Qualidade e tradição desde a fundação.">
+  <meta property="og:image" content="images/og-image.png">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <link rel="apple-touch-icon" href="images/favicon.png">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,500&family=Lato:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --azul:         #0C2340;
+      --azul2:        #14305A;
+      --azul-claro:   #1B3F6F;
+      --amarelo:      #F2C744;
+      --amarelo2:     #E5B830;
+      --amarelo-claro:#FFF5D6;
+      --branco:       #FFFFFF;
+      --creme:        #FAFAF7;
+      --cinza-f:      #F4F5F7;
+      --cinza-borda:  #E2E5EA;
+      --cinza-texto:  #5A6478;
+      --texto:        #1A1F2E;
+      --ff-titulo:    'Playfair Display', serif;
+      --ff-corpo:     'Lato', sans-serif;
+      --header-h:     78px;
+      --tr:           0.3s ease;
+      --sombra:       0 4px 24px rgba(12,35,64,0.08);
+      --sombra-lg:    0 12px 48px rgba(12,35,64,0.12);
+      --radius:       12px;
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--ff-corpo);
+      color: var(--texto);
+      background: var(--branco);
+      line-height: 1.7;
+    }
+    img { max-width: 100%; display: block; }
+    a { text-decoration: none; color: inherit; }
+    h1, h2, h3 { font-family: var(--ff-titulo); line-height: 1.2; }
+
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    section { padding: 100px 0; }
+
+    /* ── Section header ── */
+    .sec-header { text-align: center; margin-bottom: 64px; }
+    .sec-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--amarelo-claro);
+      color: var(--azul);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      padding: 6px 18px;
+      border-radius: 24px;
+      margin-bottom: 16px;
+    }
+    .sec-tag i { color: var(--amarelo2); }
+    .sec-header h2 {
+      font-size: clamp(1.9rem, 3.8vw, 2.8rem);
+      color: var(--azul);
+      margin-bottom: 16px;
+    }
+    .sec-header p {
+      font-size: 1.02rem;
+      color: var(--cinza-texto);
+      max-width: 580px;
+      margin: 0 auto;
+      line-height: 1.75;
+    }
+
+    /* ── Botões ── */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 34px;
+      border-radius: 6px;
+      font-family: var(--ff-corpo);
+      font-weight: 700;
+      font-size: 0.92rem;
+      letter-spacing: 0.03em;
+      border: 2px solid transparent;
+      cursor: pointer;
+      transition: all var(--tr);
+    }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-amarelo {
+      background: var(--amarelo);
+      color: var(--azul);
+      border-color: var(--amarelo);
+    }
+    .btn-amarelo:hover { background: var(--amarelo2); border-color: var(--amarelo2); box-shadow: 0 6px 20px rgba(242,199,68,0.35); }
+    .btn-outline-branco {
+      background: rgba(255,255,255,0.08);
+      color: var(--branco);
+      border-color: rgba(255,255,255,0.4);
+    }
+    .btn-outline-branco:hover { background: rgba(255,255,255,0.16); border-color: rgba(255,255,255,0.7); }
+    .btn-azul {
+      background: var(--azul);
+      color: var(--branco);
+      border-color: var(--azul);
+    }
+    .btn-azul:hover { background: var(--azul2); border-color: var(--azul2); box-shadow: 0 6px 20px rgba(12,35,64,0.25); }
+
+    /* ── Divider ── */
+    .divider {
+      width: 56px; height: 3px;
+      background: var(--amarelo);
+      border-radius: 2px;
+      margin: 0 auto 18px;
+    }
+
+    /* ══════════════════════════════════════
+       HEADER
+    ══════════════════════════════════════ */
+    header {
+      position: fixed;
+      top: 0; left: 0; width: 100%;
+      height: var(--header-h);
+      z-index: 1000;
+      background: rgba(12,35,64,0.97);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 2px solid rgba(242,199,68,0.25);
+      transition: box-shadow var(--tr);
+    }
+    header.scrolled { box-shadow: 0 4px 24px rgba(0,0,0,0.2); }
+
+    .header-inner {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+    .header-logo img {
+      height: 48px;
+      width: auto;
+    }
+
+    .desktop-nav ul {
+      list-style: none;
+      display: flex;
+      gap: 4px;
+    }
+    .desktop-nav a {
+      color: rgba(255,255,255,0.75);
+      font-size: 0.84rem;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      padding: 8px 16px;
+      border-radius: 5px;
+      transition: all var(--tr);
+    }
+    .desktop-nav a:hover { color: var(--branco); background: rgba(255,255,255,0.08); }
+    .desktop-nav a.active { color: var(--amarelo); }
+
+    .btn-header-wpp {
+      background: var(--amarelo);
+      color: var(--azul);
+      font-size: 0.78rem;
+      font-weight: 800;
+      padding: 9px 20px;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      white-space: nowrap;
+      transition: all var(--tr);
+      flex-shrink: 0;
+    }
+    .btn-header-wpp:hover { background: var(--amarelo2); }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 6px;
+    }
+    .hamburger span {
+      display: block;
+      width: 24px; height: 2px;
+      background: var(--branco);
+      border-radius: 2px;
+      transition: all var(--tr);
+    }
+    .hamburger.ativo span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.ativo span:nth-child(2) { opacity: 0; }
+    .hamburger.ativo span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    #navMenu {
+      position: fixed;
+      top: var(--header-h);
+      left: 0; width: 100%;
+      background: rgba(12,35,64,0.98);
+      backdrop-filter: blur(16px);
+      z-index: 999;
+      display: none;
+      flex-direction: column;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+    }
+    #navMenu.open { display: flex; }
+    #navMenu a {
+      color: rgba(255,255,255,0.8);
+      font-size: 0.95rem;
+      font-weight: 600;
+      padding: 16px 24px;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      transition: all var(--tr);
+    }
+    #navMenu a:last-child { border-bottom: none; }
+    #navMenu a:hover { color: var(--branco); background: rgba(255,255,255,0.06); }
+    #navMenu .mob-cta {
+      background: var(--amarelo);
+      color: var(--azul);
+      text-align: center;
+      padding: 16px 24px;
+      font-weight: 800;
+      border-bottom: none;
+    }
+    #navMenu .mob-cta:hover { background: var(--amarelo2); }
+
+    /* ══════════════════════════════════════
+       HERO
+    ══════════════════════════════════════ */
+    #hero {
+      min-height: 100vh;
+      padding-top: var(--header-h);
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      background:
+        linear-gradient(135deg, rgba(12,35,64,0.92) 0%, rgba(20,48,90,0.88) 50%, rgba(27,63,111,0.85) 100%),
+        url('https://images.unsplash.com/photo-1563453392212-326f5e854473?w=1920&q=80') center / cover no-repeat;
+    }
+    .hero-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+      padding: 80px 0;
+    }
+    .hero-text { position: relative; z-index: 1; }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(242,199,68,0.12);
+      border: 1px solid rgba(242,199,68,0.3);
+      color: var(--amarelo);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 7px 18px;
+      border-radius: 4px;
+      margin-bottom: 28px;
+    }
+    .hero-badge-dot { width: 6px; height: 6px; background: var(--amarelo); border-radius: 50%; }
+
+    .hero-text h1 {
+      font-size: clamp(3rem, 6vw, 5rem);
+      font-weight: 800;
+      color: var(--branco);
+      margin-bottom: 8px;
+    }
+    .hero-text h1 span { color: var(--amarelo); }
+    .hero-text h2 {
+      font-family: var(--ff-corpo);
+      font-size: clamp(1rem, 1.8vw, 1.2rem);
+      font-weight: 400;
+      color: rgba(255,255,255,0.55);
+      line-height: 1.7;
+      margin-bottom: 12px;
+      max-width: 520px;
+    }
+    .hero-slogan {
+      font-family: var(--ff-titulo);
+      font-size: 1.15rem;
+      font-style: italic;
+      color: var(--amarelo);
+      margin-bottom: 36px;
+      opacity: 0.9;
+    }
+    .hero-btns { display: flex; gap: 14px; flex-wrap: wrap; }
+
+    .hero-visual {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .hero-card {
+      background: var(--branco);
+      border-radius: var(--radius);
+      padding: 40px;
+      box-shadow: var(--sombra-lg);
+      text-align: center;
+      max-width: 380px;
+      width: 100%;
+    }
+    .hero-card img {
+      height: 100px;
+      width: auto;
+      margin: 0 auto 24px;
+    }
+    .hero-card-stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 24px;
+    }
+    .hero-card-stat {
+      background: var(--creme);
+      border-radius: 8px;
+      padding: 16px 12px;
+    }
+    .hero-card-stat strong {
+      display: block;
+      font-family: var(--ff-titulo);
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--azul);
+      line-height: 1;
+    }
+    .hero-card-stat span {
+      font-size: 0.72rem;
+      color: var(--cinza-texto);
+      font-weight: 600;
+      margin-top: 4px;
+      display: block;
+    }
+
+    /* ══════════════════════════════════════
+       SOBRE
+    ══════════════════════════════════════ */
+    #sobre { background: var(--creme); }
+    .sobre-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 72px;
+      align-items: center;
+    }
+    .sobre-visual { position: relative; }
+    .sobre-img {
+      width: 100%;
+      height: 440px;
+      object-fit: cover;
+      border-radius: var(--radius);
+      box-shadow: var(--sombra-lg);
+    }
+    .sobre-badge {
+      position: absolute;
+      bottom: -20px; right: -20px;
+      background: var(--amarelo);
+      color: var(--azul);
+      padding: 20px 24px;
+      border-radius: var(--radius);
+      text-align: center;
+      box-shadow: var(--sombra);
+    }
+    .sobre-badge strong {
+      display: block;
+      font-family: var(--ff-titulo);
+      font-size: 1.8rem;
+      font-weight: 800;
+      line-height: 1;
+    }
+    .sobre-badge span { font-size: 0.72rem; font-weight: 700; display: block; margin-top: 2px; }
+
+    .sobre-content .sec-tag { margin-bottom: 16px; }
+    .sobre-content h2 {
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      color: var(--azul);
+      margin-bottom: 20px;
+    }
+    .sobre-content p {
+      color: var(--cinza-texto);
+      font-size: 0.98rem;
+      line-height: 1.82;
+      margin-bottom: 14px;
+    }
+    .sobre-content p strong { color: var(--texto); }
+    .sobre-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 24px;
+    }
+    .pill {
+      background: var(--branco);
+      border: 1px solid var(--cinza-borda);
+      color: var(--texto);
+      font-size: 0.82rem;
+      font-weight: 600;
+      padding: 7px 18px;
+      border-radius: 24px;
+      transition: all var(--tr);
+    }
+    .pill:hover { background: var(--amarelo-claro); border-color: var(--amarelo); transform: translateY(-2px); }
+
+    /* ══════════════════════════════════════
+       MVV
+    ══════════════════════════════════════ */
+    #mvv {
+      background:
+        linear-gradient(rgba(12,35,64,0.94), rgba(12,35,64,0.94)),
+        url('https://images.unsplash.com/photo-1628177142898-93e36e4e3a50?w=1920&q=80') center / cover no-repeat;
+      background-attachment: scroll, fixed;
+    }
+    .mvv-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    .mvv-card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: var(--radius);
+      padding: 40px 28px;
+      text-align: center;
+      transition: all var(--tr);
+      position: relative;
+      overflow: hidden;
+    }
+    .mvv-card:hover { background: rgba(255,255,255,0.08); transform: translateY(-4px); }
+    .mvv-card-icon {
+      width: 60px; height: 60px;
+      background: rgba(242,199,68,0.12);
+      border: 1px solid rgba(242,199,68,0.25);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+    }
+    .mvv-card-icon i { font-size: 1.3rem; color: var(--amarelo); }
+    .mvv-card h3 {
+      font-size: 1.2rem;
+      color: var(--branco);
+      margin-bottom: 12px;
+    }
+    .mvv-card p {
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.6);
+      line-height: 1.72;
+    }
+
+    /* ══════════════════════════════════════
+       PRODUTOS
+    ══════════════════════════════════════ */
+    #produtos { background: var(--creme); }
+    .produtos-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .produto-card {
+      background: var(--branco);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--sombra);
+      transition: all var(--tr);
+      position: relative;
+    }
+    .produto-card:hover { transform: translateY(-6px); box-shadow: var(--sombra-lg); }
+    .prod-img-wrap { overflow: hidden; }
+    .prod-img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      transition: transform 0.45s ease;
+    }
+    .produto-card:hover .prod-img { transform: scale(1.06); }
+    .prod-body { padding: 24px; }
+    .prod-body h3 {
+      font-size: 1.1rem;
+      color: var(--azul);
+      margin-bottom: 8px;
+    }
+    .prod-body p {
+      font-size: 0.88rem;
+      color: var(--cinza-texto);
+      line-height: 1.68;
+    }
+    .prod-tag {
+      display: inline-block;
+      margin-top: 14px;
+      background: var(--amarelo-claro);
+      color: var(--azul);
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 4px;
+    }
+
+    /* ══════════════════════════════════════
+       DIFERENCIAIS
+    ══════════════════════════════════════ */
+    #diferenciais { background: var(--branco); }
+    .dif-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .dif-card {
+      text-align: center;
+      padding: 36px 20px;
+      border-radius: var(--radius);
+      border: 1px solid var(--cinza-borda);
+      transition: all var(--tr);
+      background: var(--branco);
+    }
+    .dif-card:hover { border-color: var(--amarelo); box-shadow: var(--sombra); transform: translateY(-4px); }
+    .dif-icon {
+      width: 64px; height: 64px;
+      background: var(--amarelo-claro);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 18px;
+      transition: all var(--tr);
+    }
+    .dif-icon i { font-size: 1.4rem; color: var(--azul); transition: all var(--tr); }
+    .dif-card:hover .dif-icon { background: var(--amarelo); }
+    .dif-card h3 {
+      font-size: 1rem;
+      color: var(--azul);
+      margin-bottom: 8px;
+    }
+    .dif-card p {
+      font-size: 0.85rem;
+      color: var(--cinza-texto);
+      line-height: 1.65;
+    }
+
+    /* ══════════════════════════════════════
+       CONTATO
+    ══════════════════════════════════════ */
+    #contato { background: var(--creme); }
+    .contato-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      max-width: 900px;
+      margin: 0 auto 40px;
+    }
+    .contato-card {
+      background: var(--branco);
+      border: 1px solid var(--cinza-borda);
+      border-radius: var(--radius);
+      padding: 22px 24px;
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      transition: all var(--tr);
+    }
+    .contato-card:hover { border-color: var(--amarelo); box-shadow: var(--sombra); }
+    .contato-card.full { grid-column: span 2; }
+    .cc-icon {
+      width: 44px; height: 44px;
+      background: var(--amarelo-claro);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--azul);
+      font-size: 1rem;
+      flex-shrink: 0;
+      transition: all var(--tr);
+    }
+    .contato-card:hover .cc-icon { background: var(--amarelo); }
+    .cc-label {
+      font-size: 0.68rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--cinza-texto);
+      margin-bottom: 4px;
+    }
+    .cc-value { font-size: 0.95rem; font-weight: 600; color: var(--texto); line-height: 1.5; }
+    .cc-value a { color: var(--azul); }
+    .cc-value a:hover { text-decoration: underline; }
+
+    .contato-mapa {
+      max-width: 900px;
+      margin: 0 auto;
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--sombra);
+    }
+    .contato-mapa iframe {
+      width: 100%;
+      height: 380px;
+      border: none;
+    }
+
+    .wa-cta-wrap { text-align: center; margin-top: 40px; }
+    .btn-whatsapp {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: #22C55E;
+      color: var(--branco);
+      font-size: 1rem;
+      font-weight: 700;
+      padding: 16px 44px;
+      border-radius: 8px;
+      transition: all var(--tr);
+      box-shadow: 0 4px 20px rgba(34,197,94,0.28);
+    }
+    .btn-whatsapp:hover { background: #16A34A; transform: translateY(-2px); }
+
+    /* ══════════════════════════════════════
+       FOOTER
+    ══════════════════════════════════════ */
+    footer {
+      background: var(--azul);
+      border-top: 3px solid var(--amarelo);
+      padding: 56px 0 32px;
+    }
+    .footer-inner {
+      display: grid;
+      grid-template-columns: 1.3fr 1fr 1fr;
+      gap: 48px;
+      margin-bottom: 40px;
+    }
+    .footer-brand img {
+      height: 56px;
+      width: auto;
+      margin-bottom: 16px;
+    }
+    .footer-brand p {
+      font-size: 0.88rem;
+      color: rgba(255,255,255,0.5);
+      line-height: 1.7;
+      max-width: 300px;
+    }
+    .footer-social {
+      display: flex;
+      gap: 10px;
+      margin-top: 20px;
+    }
+    .footer-social a {
+      width: 38px; height: 38px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.07);
+      color: rgba(255,255,255,0.5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.9rem;
+      transition: all var(--tr);
+    }
+    .footer-social a:hover { background: var(--amarelo); color: var(--azul); }
+
+    .footer-col h4 {
+      font-family: var(--ff-corpo);
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--amarelo);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 20px;
+    }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 10px; }
+    .footer-col li a {
+      font-size: 0.88rem;
+      color: rgba(255,255,255,0.55);
+      transition: color var(--tr);
+    }
+    .footer-col li a:hover { color: var(--branco); }
+    .footer-col p {
+      font-size: 0.88rem;
+      color: rgba(255,255,255,0.55);
+      line-height: 1.8;
+    }
+    .footer-col p i { color: var(--amarelo); margin-right: 8px; width: 16px; text-align: center; }
+
+    .footer-bar {
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding-top: 24px;
+      text-align: center;
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.3);
+      line-height: 2;
+    }
+
+    /* ══════════════════════════════════════
+       WHATSAPP FLOAT
+    ══════════════════════════════════════ */
+    .wa-float {
+      position: fixed;
+      bottom: 28px; right: 28px;
+      z-index: 900;
+      width: 56px; height: 56px;
+      background: #22C55E;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 16px rgba(34,197,94,0.3);
+      transition: background var(--tr);
+    }
+    .wa-float:hover { background: #16A34A; }
+    .wa-float i { color: var(--branco); font-size: 1.6rem; }
+
+    /* ══════════════════════════════════════
+       REVEAL ON SCROLL
+    ══════════════════════════════════════ */
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* ══════════════════════════════════════
+       RESPONSIVE
+    ══════════════════════════════════════ */
+
+    @media (min-width: 1440px) {
+      .container { max-width: 1280px; }
+    }
+
+    @media (max-width: 1023px) {
+      .hero-inner { grid-template-columns: 1fr; gap: 48px; text-align: center; }
+      .hero-text h2 { max-width: 100%; margin: 0 auto 12px; }
+      .hero-slogan { margin: 0 auto 36px; }
+      .hero-btns { justify-content: center; }
+      .hero-visual { justify-content: center; }
+      .hero-card { max-width: 360px; }
+
+      .sobre-grid { grid-template-columns: 1fr; gap: 48px; }
+      .sobre-visual { max-width: 500px; margin: 0 auto; }
+
+      .mvv-grid { grid-template-columns: 1fr; max-width: 480px; }
+
+      .produtos-grid { grid-template-columns: repeat(2, 1fr); }
+
+      .dif-grid { grid-template-columns: repeat(2, 1fr); }
+
+      .footer-inner { grid-template-columns: 1fr; gap: 32px; }
+
+      #mvv { background-attachment: scroll, scroll; }
+    }
+
+    @media (max-width: 768px) {
+      :root { --header-h: 66px; }
+      .desktop-nav { display: none; }
+      .hamburger { display: flex; }
+      .btn-header-wpp span { display: none; }
+
+      section { padding: 72px 0; }
+      .sec-header { margin-bottom: 48px; }
+
+      .hero-inner { padding: 56px 0; }
+      .hero-badge { font-size: 0.68rem; }
+      .hero-btns { flex-direction: column; align-items: center; }
+      .hero-btns .btn { width: 100%; max-width: 320px; justify-content: center; }
+
+      .sobre-img { height: 340px; }
+      .sobre-badge { bottom: 12px; right: 12px; padding: 16px 18px; }
+      .sobre-badge strong { font-size: 1.4rem; }
+
+      .contato-grid { grid-template-columns: 1fr; }
+      .contato-card.full { grid-column: span 1; }
+      .contato-mapa iframe { height: 300px; }
+    }
+
+    @media (max-width: 480px) {
+      :root { --header-h: 60px; }
+      .container { padding: 0 16px; }
+      section { padding: 56px 0; }
+
+      .hero-inner { padding: 44px 0; }
+      .hero-card { padding: 28px 20px; }
+      .hero-card-stats { grid-template-columns: 1fr 1fr; gap: 10px; }
+
+      .sobre-img { height: 260px; }
+      .sobre-badge { position: static; margin-top: 16px; display: inline-block; border-radius: 8px; }
+
+      .produtos-grid { grid-template-columns: 1fr; }
+      .prod-img { height: 180px; }
+
+      .dif-grid { grid-template-columns: 1fr; max-width: 340px; margin: 0 auto; }
+
+      .wa-float { bottom: 16px; right: 14px; width: 50px; height: 50px; }
+      .wa-float i { font-size: 1.4rem; }
+    }
+
+    @media (max-width: 360px) {
+      .hero-card-stat strong { font-size: 1.2rem; }
+      .contato-card { padding: 16px 18px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header id="header">
+  <div class="container header-inner">
+    <a href="index.html" class="header-logo" aria-label="Dy Paulo — início">
+      <img src="images/logo.png" alt="Logo Dy Paulo Produtos de Limpeza">
+    </a>
+
+    <nav class="desktop-nav" aria-label="Navegação principal">
+      <ul>
+        <li><a href="index.html#sobre">Sobre</a></li>
+        <li><a href="index.html#mvv">Nossa essência</a></li>
+        <li><a href="index.html#produtos">Produtos</a></li>
+        <li><a href="index.html#diferenciais">Diferenciais</a></li>
+        <li><a href="index.html#contato">Contato</a></li>
+      </ul>
+    </nav>
+
+    <a href="https://wa.me/554936223371" class="btn-header-wpp" target="_blank" rel="noopener noreferrer">
+      <i class="fab fa-whatsapp" aria-hidden="true"></i>
+      <span>Fale conosco</span>
+    </a>
+
+    <button class="hamburger" id="hamburger" aria-label="Abrir menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- ===== MENU MOBILE ===== -->
+<nav id="navMenu" aria-label="Menu mobile" aria-hidden="true">
+  <a href="index.html#sobre"        onclick="closeMenu()">Sobre</a>
+  <a href="index.html#mvv"          onclick="closeMenu()">Nossa essência</a>
+  <a href="index.html#produtos"     onclick="closeMenu()">Produtos</a>
+  <a href="index.html#diferenciais" onclick="closeMenu()">Diferenciais</a>
+  <a href="index.html#contato"      onclick="closeMenu()">Contato</a>
+  <a href="https://wa.me/554936223371" target="_blank" onclick="closeMenu()" class="mob-cta">
+    <i class="fab fa-whatsapp"></i> Fale pelo WhatsApp
+  </a>
+</nav>
+
+<!-- ===== HERO ===== -->
+<section id="hero">
+  <div class="container hero-inner">
+    <div class="hero-text">
+      <div class="hero-badge">
+        <span class="hero-badge-dot"></span>
+        Tradição em limpeza e qualidade
+      </div>
+      <h1>Dy <span>Paulo</span></h1>
+      <h2>Indústria e comércio de produtos de limpeza e utensílios domésticos. Qualidade, tradição e compromisso com quem confia na nossa marca.</h2>
+      <p class="hero-slogan">"O que a gente faz de melhor, faz pra você"</p>
+      <div class="hero-btns">
+        <a href="https://wa.me/554936223371" class="btn btn-amarelo" target="_blank" rel="noopener noreferrer">
+          <i class="fab fa-whatsapp" aria-hidden="true"></i> Fale conosco
+        </a>
+        <a href="index.html#produtos" class="btn btn-outline-branco">
+          <i class="fas fa-box-open" aria-hidden="true"></i> Ver produtos
+        </a>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="hero-card">
+        <img src="images/logo.png" alt="Dy Paulo Produtos de Limpeza">
+        <div class="hero-card-stats">
+          <div class="hero-card-stat">
+            <strong>20+</strong>
+            <span>Anos de mercado</span>
+          </div>
+          <div class="hero-card-stat">
+            <strong>100+</strong>
+            <span>Produtos</span>
+          </div>
+          <div class="hero-card-stat">
+            <strong>SC</strong>
+            <span>Santa Catarina</span>
+          </div>
+          <div class="hero-card-stat">
+            <strong>5 ★</strong>
+            <span>Qualidade</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SOBRE ===== -->
+<section id="sobre">
+  <div class="container">
+    <div class="sobre-grid">
+
+      <div class="sobre-visual reveal">
+        <img class="sobre-img" src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=800&q=80" alt="Produtos de limpeza — indústria e qualidade">
+        <div class="sobre-badge">
+          <strong>20+</strong>
+          <span>anos de história</span>
+        </div>
+      </div>
+
+      <div class="sobre-content reveal">
+        <span class="sec-tag"><i class="fas fa-landmark"></i> Nossa história</span>
+        <h2>Uma empresa fundada com paixão por empreender</h2>
+        <p>A <strong>Dy Paulo</strong> nasceu do sonho do fundador <strong>Paulo Roberto</strong>, que começou sua jornada empreendedora produzindo produtos de limpeza artesanalmente e vendendo de porta em porta.</p>
+        <p>Com dedicação, qualidade e o compromisso de entregar sempre o melhor, a empresa cresceu e se consolidou no mercado. Hoje, a Dy Paulo atende diversos segmentos — desde o <strong>consumidor final</strong> até <strong>mercados, lojas especializadas e empresas de grande porte</strong>.</p>
+        <p>A trajetória da empresa é marcada pela <strong>tradição, confiança e inovação</strong> constante, sempre mantendo a essência de cuidar de cada produto como se fosse o primeiro.</p>
+
+        <div class="sobre-pills">
+          <span class="pill">Produtos de limpeza</span>
+          <span class="pill">Utensílios domésticos</span>
+          <span class="pill">Indústria própria</span>
+          <span class="pill">Tradição e qualidade</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== MVV ===== -->
+<section id="mvv">
+  <div class="container">
+    <div class="sec-header reveal">
+      <span class="sec-tag" style="background:rgba(242,199,68,0.12);color:var(--amarelo);"><i class="fas fa-star"></i> Nossa essência</span>
+      <h2 style="color:var(--branco);">Missão, visão e valores</h2>
+      <div class="divider"></div>
+      <p style="color:rgba(255,255,255,0.5);">Os princípios que guiam cada produto, cada atendimento e cada decisão da Dy Paulo.</p>
+    </div>
+    <div class="mvv-grid">
+
+      <div class="mvv-card reveal">
+        <div class="mvv-card-icon"><i class="fas fa-bullseye"></i></div>
+        <h3>Missão</h3>
+        <p>Produzir e comercializar produtos de limpeza de alta qualidade, oferecendo soluções eficazes e acessíveis que facilitem o dia a dia dos nossos clientes.</p>
+      </div>
+
+      <div class="mvv-card reveal">
+        <div class="mvv-card-icon"><i class="fas fa-eye"></i></div>
+        <h3>Visão</h3>
+        <p>Ser referência regional no mercado de produtos de limpeza, reconhecida pela qualidade, inovação e compromisso com a satisfação dos clientes.</p>
+      </div>
+
+      <div class="mvv-card reveal">
+        <div class="mvv-card-icon"><i class="fas fa-heart"></i></div>
+        <h3>Valores</h3>
+        <p>Qualidade em cada produto, respeito ao cliente e ao meio ambiente, ética nas relações comerciais e compromisso com a melhoria contínua.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== PRODUTOS ===== -->
+<section id="produtos">
+  <div class="container">
+    <div class="sec-header reveal">
+      <span class="sec-tag"><i class="fas fa-box-open"></i> O que oferecemos</span>
+      <h2>Nossos produtos</h2>
+      <div class="divider"></div>
+      <p>Uma linha completa de produtos de limpeza e utensílios domésticos para atender todos os segmentos do mercado.</p>
+    </div>
+    <div class="produtos-grid">
+
+      <div class="produto-card reveal">
+        <div class="prod-img-wrap">
+          <img class="prod-img" src="https://images.unsplash.com/photo-1585421514284-efb74c2b69ba?w=600&q=80" alt="Produtos de limpeza multiuso">
+        </div>
+        <div class="prod-body">
+          <h3>Limpeza geral</h3>
+          <p>Desengordurantes, multiusos, limpa-vidros e detergentes para todas as superfícies da sua casa ou empresa.</p>
+          <span class="prod-tag">Mais vendidos</span>
+        </div>
+      </div>
+
+      <div class="produto-card reveal">
+        <div class="prod-img-wrap">
+          <img class="prod-img" src="https://images.unsplash.com/photo-1610557892470-55d9e80c0bce?w=600&q=80" alt="Desinfetantes e sanitizantes">
+        </div>
+        <div class="prod-body">
+          <h3>Desinfetantes</h3>
+          <p>Linha completa de desinfetantes e sanitizantes com diversas fragrâncias para ambientes limpos e perfumados.</p>
+          <span class="prod-tag">Higienização</span>
+        </div>
+      </div>
+
+      <div class="produto-card reveal">
+        <div class="prod-img-wrap">
+          <img class="prod-img" src="https://images.unsplash.com/photo-1563453392212-326f5e854473?w=600&q=80" alt="Produtos para lavanderia">
+        </div>
+        <div class="prod-body">
+          <h3>Lavanderia</h3>
+          <p>Sabões, amaciantes e alvejantes que cuidam das suas roupas com eficácia e delicadeza.</p>
+          <span class="prod-tag">Cuidado têxtil</span>
+        </div>
+      </div>
+
+      <div class="produto-card reveal">
+        <div class="prod-img-wrap">
+          <img class="prod-img" src="https://images.unsplash.com/photo-1584813470613-5b1c1cad3d69?w=600&q=80" alt="Detergentes e lava-louças">
+        </div>
+        <div class="prod-body">
+          <h3>Detergentes</h3>
+          <p>Detergentes líquidos e em pasta com alto poder de limpeza para cozinhas domésticas e industriais.</p>
+          <span class="prod-tag">Cozinha</span>
+        </div>
+      </div>
+
+      <div class="produto-card reveal">
+        <div class="prod-img-wrap">
+          <img class="prod-img" src="https://images.unsplash.com/photo-1556909114-44e3e70034e2?w=600&q=80" alt="Água sanitária e cloro">
+        </div>
+        <div class="prod-body">
+          <h3>Água sanitária</h3>
+          <p>Água sanitária de alta concentração para desinfecção, limpeza pesada e alvejamento de roupas brancas.</p>
+          <span class="prod-tag">Limpeza pesada</span>
+        </div>
+      </div>
+
+      <div class="produto-card reveal">
+        <div class="prod-img-wrap">
+          <img class="prod-img" src="https://images.unsplash.com/photo-1583947215259-38e31be8751f?w=600&q=80" alt="Utensílios domésticos">
+        </div>
+        <div class="prod-body">
+          <h3>Utensílios domésticos</h3>
+          <p>Linha completa de utensílios para o dia a dia: esponjas, panos, rodos, vassouras e acessórios de limpeza.</p>
+          <span class="prod-tag">Uso diário</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== DIFERENCIAIS ===== -->
+<section id="diferenciais">
+  <div class="container">
+    <div class="sec-header reveal">
+      <span class="sec-tag"><i class="fas fa-award"></i> Por que escolher a Dy Paulo</span>
+      <h2>Nossos diferenciais</h2>
+      <div class="divider"></div>
+      <p>O que nos torna a escolha certa para produtos de limpeza de qualidade.</p>
+    </div>
+    <div class="dif-grid">
+
+      <div class="dif-card reveal">
+        <div class="dif-icon"><i class="fas fa-industry"></i></div>
+        <h3>Fabricação própria</h3>
+        <p>Produção própria com controle total de qualidade em cada etapa do processo.</p>
+      </div>
+
+      <div class="dif-card reveal">
+        <div class="dif-icon"><i class="fas fa-medal"></i></div>
+        <h3>Tradição de mercado</h3>
+        <p>Mais de 20 anos de experiência no setor de produtos de limpeza e utensílios domésticos.</p>
+      </div>
+
+      <div class="dif-card reveal">
+        <div class="dif-icon"><i class="fas fa-handshake"></i></div>
+        <h3>Atendimento personalizado</h3>
+        <p>Relação próxima com cada cliente, entendendo suas necessidades e oferecendo soluções sob medida.</p>
+      </div>
+
+      <div class="dif-card reveal">
+        <div class="dif-icon"><i class="fas fa-tags"></i></div>
+        <h3>Melhor custo-benefício</h3>
+        <p>Produtos de qualidade com preço justo, direto da fábrica para o consumidor.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== CONTATO ===== -->
+<section id="contato">
+  <div class="container">
+    <div class="sec-header reveal">
+      <span class="sec-tag"><i class="fas fa-envelope"></i> Fale conosco</span>
+      <h2>Entre em contato</h2>
+      <div class="divider"></div>
+      <p>Estamos prontos para atender você. Entre em contato pelo telefone, e-mail ou nos visite pessoalmente.</p>
+    </div>
+
+    <div class="contato-grid">
+      <div class="contato-card reveal">
+        <div class="cc-icon"><i class="fas fa-phone"></i></div>
+        <div>
+          <div class="cc-label">Telefone / WhatsApp</div>
+          <div class="cc-value"><a href="https://wa.me/554936223371">(49) 3622-3371</a></div>
+        </div>
+      </div>
+      <div class="contato-card reveal">
+        <div class="cc-icon"><i class="fas fa-envelope"></i></div>
+        <div>
+          <div class="cc-label">E-mail</div>
+          <div class="cc-value"><a href="mailto:prpsmo@yahoo.com.br">prpsmo@yahoo.com.br</a></div>
+        </div>
+      </div>
+      <div class="contato-card reveal">
+        <div class="cc-icon"><i class="fas fa-map-marker-alt"></i></div>
+        <div>
+          <div class="cc-label">Endereço</div>
+          <div class="cc-value">Linha Nereu Ramos — São Miguel do Oeste/SC</div>
+        </div>
+      </div>
+      <div class="contato-card reveal">
+        <div class="cc-icon"><i class="fas fa-clock"></i></div>
+        <div>
+          <div class="cc-label">Horário de atendimento</div>
+          <div class="cc-value">Seg–Sex: 8h às 18h · Sáb: 8h às 11h30</div>
+        </div>
+      </div>
+      <div class="contato-card full reveal">
+        <div class="cc-icon"><i class="fas fa-building"></i></div>
+        <div>
+          <div class="cc-label">Razão social</div>
+          <div class="cc-value">PRP Indústria e Comércio de Produtos de Limpeza LTDA · CNPJ 05.696.004/0001-70</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="contato-mapa reveal">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2664!2d-53.4954936!3d-26.7267294!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94fa5b6d521132e1%3A0xb6968e8ca46ce9bc!2sDy%20Paulo!5e0!3m2!1spt-BR!2sbr!4v1" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Localização Dy Paulo"></iframe>
+    </div>
+
+    <div class="wa-cta-wrap reveal">
+      <a href="https://wa.me/554936223371" class="btn-whatsapp" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-whatsapp"></i> Fale conosco pelo WhatsApp
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+
+      <div class="footer-brand">
+        <img src="images/logo.png" alt="Dy Paulo">
+        <p>Indústria e comércio de produtos de limpeza e utensílios domésticos. Qualidade e tradição desde a fundação.</p>
+        <div class="footer-social">
+          <a href="https://wa.me/554936223371" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp Dy Paulo">
+            <i class="fab fa-whatsapp"></i>
+          </a>
+          <a href="mailto:prpsmo@yahoo.com.br" aria-label="E-mail Dy Paulo">
+            <i class="fas fa-envelope"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Navegação</h4>
+        <ul>
+          <li><a href="index.html">Início</a></li>
+          <li><a href="index.html#sobre">Sobre</a></li>
+          <li><a href="index.html#produtos">Produtos</a></li>
+          <li><a href="index.html#diferenciais">Diferenciais</a></li>
+          <li><a href="index.html#contato">Contato</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Contato</h4>
+        <p><i class="fas fa-map-marker-alt"></i> Linha Nereu Ramos — SMO/SC</p>
+        <p><i class="fas fa-phone"></i> (49) 3622-3371</p>
+        <p><i class="fas fa-envelope"></i> prpsmo@yahoo.com.br</p>
+        <p><i class="fas fa-clock"></i> Seg–Sex: 8h–18h · Sáb: 8h–11h30</p>
+      </div>
+
+    </div>
+    <div class="footer-bar">
+      CNPJ 05.696.004/0001-70<br>
+      © 2025 Dy Paulo — Produtos de Limpeza. Todos os direitos reservados.
+    </div>
+    <div id="montesite-footer-badge"></div>
+    <script src="https://vaabpicspdbolvutnscp.supabase.co/functions/v1/get-footer-iframe"></script>
+  </div>
+</footer>
+
+<!-- WhatsApp float -->
+<a href="https://wa.me/554936223371" target="_blank" rel="noopener noreferrer" class="wa-float" aria-label="Fale pelo WhatsApp">
+  <i class="fab fa-whatsapp"></i>
+</a>
+
+<script>
+  /* ── Menu mobile ── */
+  const hamburger = document.getElementById('hamburger');
+  const navMenu   = document.getElementById('navMenu');
+  hamburger.addEventListener('click', () => {
+    navMenu.classList.toggle('open');
+    hamburger.classList.toggle('ativo');
+    hamburger.setAttribute('aria-expanded', navMenu.classList.contains('open'));
+  });
+  function closeMenu() {
+    navMenu.classList.remove('open');
+    hamburger.classList.remove('ativo');
+    hamburger.setAttribute('aria-expanded', 'false');
+  }
+
+  /* ── Header scroll ── */
+  const header = document.getElementById('header');
+  window.addEventListener('scroll', () => {
+    header.classList.toggle('scrolled', window.scrollY > 30);
+  }, { passive: true });
+
+  /* ── Reveal on scroll ── */
+  const revealObs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        revealObs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
+
+  /* ── Stagger delay ── */
+  document.querySelectorAll('.produtos-grid .reveal, .dif-grid .reveal, .contato-grid .reveal, .mvv-grid .reveal').forEach((el, i) => {
+    el.style.transitionDelay = (i % 4 * 0.1) + 's';
+  });
+
+  /* ── Nav active on scroll ── */
+  const sections  = document.querySelectorAll('section[id]');
+  const navLinks  = document.querySelectorAll('.desktop-nav a');
+  const secObs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        navLinks.forEach(a => a.classList.remove('active'));
+        const link = document.querySelector(`.desktop-nav a[href*="${e.target.id}"]`);
+        if (link) link.classList.add('active');
+      }
+    });
+  }, { threshold: 0.35 });
+  sections.forEach(s => secObs.observe(s));
+</script>
+</body>
+</html>
