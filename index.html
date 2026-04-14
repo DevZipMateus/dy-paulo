@@ -371,7 +371,12 @@
     /* ══════════════════════════════════════
        SOBRE
     ══════════════════════════════════════ */
-    #sobre { background: var(--creme); }
+    #sobre {
+      background:
+        linear-gradient(rgba(250,250,247,0.93), rgba(250,250,247,0.93)),
+        url('images/bg-sobre.jpg') center / cover no-repeat;
+      background-attachment: scroll, fixed;
+    }
     .sobre-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -488,7 +493,12 @@
     /* ══════════════════════════════════════
        PRODUTOS
     ══════════════════════════════════════ */
-    #produtos { background: var(--creme); }
+    #produtos {
+      background:
+        linear-gradient(rgba(250,250,247,0.94), rgba(250,250,247,0.94)),
+        url('images/bg-produtos.jpg') center / cover no-repeat;
+      background-attachment: scroll, fixed;
+    }
     .produtos-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -538,7 +548,12 @@
     /* ══════════════════════════════════════
        DIFERENCIAIS
     ══════════════════════════════════════ */
-    #diferenciais { background: var(--branco); }
+    #diferenciais {
+      background:
+        linear-gradient(rgba(255,255,255,0.94), rgba(255,255,255,0.94)),
+        url('images/bg-diferenciais.jpg') center / cover no-repeat;
+      background-attachment: scroll, fixed;
+    }
     .dif-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
@@ -581,7 +596,12 @@
     /* ══════════════════════════════════════
        CONTATO
     ══════════════════════════════════════ */
-    #contato { background: var(--creme); }
+    #contato {
+      background:
+        linear-gradient(rgba(250,250,247,0.95), rgba(250,250,247,0.95)),
+        url('images/bg-contato.jpg') center / cover no-repeat;
+      background-attachment: scroll, fixed;
+    }
     .contato-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -787,7 +807,7 @@
 
       .footer-inner { grid-template-columns: 1fr; gap: 32px; }
 
-      #mvv { background-attachment: scroll, scroll; }
+      #mvv, #sobre, #produtos, #diferenciais, #contato { background-attachment: scroll, scroll; }
     }
 
     @media (max-width: 768px) {
