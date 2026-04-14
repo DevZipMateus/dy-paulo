@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>Dy Paulo — Produtos de Limpeza</title>
   <meta name="description" content="Dy Paulo — Indústria e comércio de produtos de limpeza e utensílios domésticos. Qualidade e tradição desde a fundação. Atendemos consumidores, mercados, lojas e empresas.">
 
@@ -26,6 +26,19 @@
 
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    /* ── APPLE / iOS BASE ── */
+    html {
+      -webkit-text-size-adjust: 100%;
+      text-size-adjust: 100%;
+    }
+    body {
+      -webkit-tap-highlight-color: transparent;
+    }
+    a, button {
+      -webkit-tap-highlight-color: transparent;
+      touch-action: manipulation;
+    }
 
     :root {
       --azul:         #0C2340;
@@ -273,6 +286,7 @@
     ══════════════════════════════════════ */
     #hero {
       min-height: 100vh;
+      min-height: 100svh; /* fix iOS Safari 100vh */
       padding-top: var(--header-h);
       display: flex;
       align-items: center;
@@ -848,11 +862,17 @@
        RESPONSIVE
     ══════════════════════════════════════ */
 
-    @media (min-width: 1440px) {
+    /* ── 1800px+ – ultrawide ── */
+    @media (min-width: 1800px) {
+      .container { max-width: 1500px; }
+    }
+
+    /* ── 1440px – widescreen / 4K ── */
+    @media (min-width: 1440px) and (max-width: 1799px) {
       .container { max-width: 1280px; }
     }
 
-    /* ── 1024px – tablets landscape ── */
+    /* ── 1024px – tablets landscape / iPad Pro ── */
     @media (max-width: 1023px) {
       .hero-inner { grid-template-columns: 1fr; gap: 48px; text-align: center; }
       .hero-text h2 { max-width: 100%; margin: 0 auto 12px; }
@@ -873,13 +893,13 @@
       #mvv, #sobre, #produtos, #diferenciais, #contato { background-attachment: scroll, scroll; }
     }
 
-    /* ── 900px – tablets portrait / landscape médio ── */
+    /* ── 900px – iPad portrait / tablet médio ── */
     @media (max-width: 900px) {
       .mvv-grid { grid-template-columns: repeat(2, 1fr); }
       .vitrine-banner { padding: 40px 36px; }
     }
 
-    /* ── 768px – tablets portrait / mobile largo ── */
+    /* ── 768px – tablet portrait / mobile largo ── */
     @media (max-width: 768px) {
       :root { --header-h: 66px; }
       .desktop-nav { display: none; }
@@ -892,7 +912,7 @@
       .hero-inner { padding: 56px 0; }
       .hero-badge { font-size: 0.68rem; }
       .hero-btns { flex-direction: column; align-items: center; }
-      .hero-btns .btn { width: 100%; max-width: 320px; justify-content: center; }
+      .hero-btns .btn { width: 100%; max-width: 320px; justify-content: center; min-height: 48px; }
 
       .sobre-img { height: 340px; }
       .sobre-badge { bottom: 12px; right: 12px; padding: 16px 18px; }
@@ -909,7 +929,7 @@
       .vitrine-banner p { max-width: 100%; }
     }
 
-    /* ── 480px – mobile ── */
+    /* ── 480px – iPhone Plus / mobile padrão ── */
     @media (max-width: 480px) {
       :root { --header-h: 60px; }
       .container { padding: 0 16px; }
@@ -929,19 +949,95 @@
 
       .vitrine-banner { padding: 28px 20px; gap: 24px; }
       .vitrine-banner h3 { font-size: 1.2rem; }
-      .vitrine-banner .btn { width: 100%; justify-content: center; }
+      .vitrine-banner .btn { width: 100%; justify-content: center; min-height: 48px; }
 
       .wa-float { bottom: 16px; right: 14px; width: 50px; height: 50px; }
       .wa-float i { font-size: 1.4rem; }
+
+      /* links do menu mobile com área de toque mínima Apple */
+      #navMenu a { min-height: 48px; display: flex; align-items: center; }
     }
 
-    /* ── 360px – mobile pequeno ── */
+    /* ── 375px – iPhone SE 2/3 gen / iPhone 12 mini ── */
+    @media (max-width: 375px) {
+      .hero-text h1 { font-size: clamp(2.5rem, 11vw, 3.2rem); }
+      .hero-card-stat strong { font-size: 1.25rem; }
+      .hero-card { padding: 24px 18px; }
+      .sobre-img { height: 240px; }
+      .sec-header h2 { font-size: clamp(1.6rem, 8vw, 2rem); }
+    }
+
+    /* ── 360px – Android mobile pequeno ── */
     @media (max-width: 360px) {
       :root { --header-h: 58px; }
-      .hero-card-stat strong { font-size: 1.2rem; }
+      .container { padding: 0 14px; }
+      .hero-card-stat strong { font-size: 1.15rem; }
       .contato-card { padding: 16px 18px; }
       .mvv-card { padding: 28px 20px; }
       .dif-card { padding: 28px 16px; }
+      .vitrine-banner { padding: 22px 16px; }
+    }
+
+    /* ── 320px – iPhone SE 1ª gen / telas muito pequenas ── */
+    @media (max-width: 320px) {
+      .container { padding: 0 12px; }
+      section { padding: 48px 0; }
+      .hero-text h1 { font-size: 2.2rem; }
+      .hero-btns .btn { font-size: 0.84rem; padding: 12px 18px; }
+      .prod-body h3 { font-size: 1rem; }
+      .dif-card h3 { font-size: 0.95rem; }
+    }
+
+    /* ── Landscape mobile — iPhone em paisagem ── */
+    @media (max-height: 500px) and (orientation: landscape) {
+      #hero { min-height: auto; padding: calc(var(--header-h) + 24px) 0 32px; }
+      .hero-card { display: none; }
+      section { padding: 40px 0; }
+    }
+
+    /* ══════════════════════════════════════
+       APPLE — SAFE AREA (notch + home bar)
+    ══════════════════════════════════════ */
+    @supports (padding-top: env(safe-area-inset-top)) {
+      header {
+        padding-top: env(safe-area-inset-top);
+        height: calc(var(--header-h) + env(safe-area-inset-top));
+      }
+      .header-inner {
+        height: var(--header-h);
+      }
+      #navMenu {
+        top: calc(var(--header-h) + env(safe-area-inset-top));
+      }
+      #hero {
+        padding-top: calc(var(--header-h) + env(safe-area-inset-top));
+      }
+      .wa-float {
+        bottom: calc(16px + env(safe-area-inset-bottom));
+      }
+      footer .container {
+        padding-bottom: env(safe-area-inset-bottom);
+      }
+    }
+
+    /* iOS landscape: safe area lateral */
+    @media (orientation: landscape) and (max-width: 1024px) {
+      @supports (padding-left: env(safe-area-inset-left)) {
+        .container {
+          padding-left:  max(24px, env(safe-area-inset-left));
+          padding-right: max(24px, env(safe-area-inset-right));
+        }
+        .wa-float {
+          right: calc(14px + env(safe-area-inset-right));
+        }
+      }
+    }
+
+    /* iOS: desativa parallax em todos os dispositivos touch */
+    @supports (-webkit-touch-callout: none) {
+      #mvv, #sobre, #produtos, #diferenciais, #contato {
+        background-attachment: scroll, scroll;
+      }
     }
   </style>
 </head>
