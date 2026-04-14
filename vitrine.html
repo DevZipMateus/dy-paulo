@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vitrine Online — Dy Paulo Produtos de Limpeza</title>
+  <meta name="description" content="Vitrine online Dy Paulo — explore nosso catálogo completo de produtos de limpeza e utensílios domésticos. São Miguel do Oeste/SC.">
+
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <link rel="apple-touch-icon" href="images/favicon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --azul:      #0C2340;
+      --azul2:     #14305A;
+      --amarelo:   #F2C744;
+      --amarelo2:  #E5B830;
+      --branco:    #FFFFFF;
+      --header-h:  78px;
+      --badge-h:   63px;
+      --tr:        0.3s ease;
+    }
+
+    html, body {
+      height: 100%;
+      overflow: hidden;
+      font-family: 'Lato', sans-serif;
+    }
+    a { text-decoration: none; color: inherit; }
+
+    /* ===== HEADER ===== */
+    header {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%;
+      height: var(--header-h);
+      z-index: 1000;
+      background: rgba(12,35,64,0.97);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 2px solid rgba(242,199,68,0.25);
+    }
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    .header-inner {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+    .header-logo img {
+      height: 48px;
+      width: auto;
+    }
+
+    .desktop-nav ul {
+      list-style: none;
+      display: flex;
+      gap: 4px;
+    }
+    .desktop-nav a {
+      color: rgba(255,255,255,0.75);
+      font-size: 0.84rem;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      padding: 8px 16px;
+      border-radius: 5px;
+      transition: all var(--tr);
+    }
+    .desktop-nav a:hover { color: var(--branco); background: rgba(255,255,255,0.08); }
+
+    .nav-vitrine-link {
+      background: rgba(242,199,68,0.10);
+      color: var(--amarelo) !important;
+      border: 1px solid rgba(242,199,68,0.35);
+      padding: 7px 16px !important;
+      border-radius: 5px;
+      display: inline-flex !important;
+      align-items: center;
+      gap: 6px;
+    }
+    .nav-vitrine-link:hover { background: rgba(242,199,68,0.20) !important; border-color: rgba(242,199,68,0.55); }
+    .nav-vitrine-link.active { background: rgba(242,199,68,0.22) !important; border-color: rgba(242,199,68,0.6); }
+
+    .btn-header-wpp {
+      background: var(--amarelo);
+      color: var(--azul);
+      font-size: 0.78rem;
+      font-weight: 800;
+      padding: 9px 20px;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      white-space: nowrap;
+      transition: all var(--tr);
+      flex-shrink: 0;
+    }
+    .btn-header-wpp:hover { background: var(--amarelo2); }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 6px;
+    }
+    .hamburger span {
+      display: block;
+      width: 24px; height: 2px;
+      background: var(--branco);
+      border-radius: 2px;
+      transition: all var(--tr);
+    }
+
+    #navMenu {
+      position: fixed;
+      top: var(--header-h);
+      left: 0; width: 100%;
+      background: rgba(12,35,64,0.98);
+      backdrop-filter: blur(16px);
+      z-index: 999;
+      display: none;
+      flex-direction: column;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+    }
+    #navMenu.open { display: flex; }
+    #navMenu a {
+      color: rgba(255,255,255,0.8);
+      font-size: 0.95rem;
+      font-weight: 600;
+      padding: 16px 24px;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      transition: all var(--tr);
+    }
+    #navMenu a:last-child { border-bottom: none; }
+    #navMenu a:hover { color: var(--branco); background: rgba(255,255,255,0.06); }
+    #navMenu .mob-cta {
+      background: var(--amarelo);
+      color: var(--azul);
+      text-align: center;
+      padding: 16px 24px;
+      font-weight: 800;
+      border-bottom: none;
+    }
+    #navMenu .mob-cta:hover { background: var(--amarelo2); }
+
+    /* ===== IFRAME ===== */
+    .vitrine-frame {
+      position: fixed;
+      top: var(--header-h);
+      left: 0;
+      width: 100%;
+      height: calc(100vh - var(--header-h) - var(--badge-h));
+      border: none;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 768px) {
+      :root { --header-h: 66px; }
+      .desktop-nav { display: none; }
+      .hamburger { display: flex; }
+      .btn-header-wpp span { display: none; }
+    }
+
+    @media (max-width: 480px) {
+      :root { --header-h: 60px; }
+      .container { padding: 0 16px; }
+    }
+
+    @media (max-width: 360px) {
+      :root { --header-h: 56px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header>
+  <div class="container header-inner">
+    <a href="index.html" class="header-logo" aria-label="Dy Paulo — início">
+      <img src="images/logo.png" alt="Logo Dy Paulo Produtos de Limpeza">
+    </a>
+
+    <nav class="desktop-nav" aria-label="Navegação principal">
+      <ul>
+        <li><a href="index.html#sobre">Sobre</a></li>
+        <li><a href="index.html#mvv">Nossa essência</a></li>
+        <li><a href="index.html#produtos">Produtos</a></li>
+        <li><a href="index.html#diferenciais">Diferenciais</a></li>
+        <li><a href="vitrine.html" class="nav-vitrine-link active"><i class="fas fa-store"></i> Vitrine</a></li>
+        <li><a href="index.html#contato">Contato</a></li>
+      </ul>
+    </nav>
+
+    <a href="https://wa.me/554936223371" class="btn-header-wpp" target="_blank" rel="noopener noreferrer">
+      <i class="fab fa-whatsapp" aria-hidden="true"></i>
+      <span>Fale conosco</span>
+    </a>
+
+    <button class="hamburger" id="hamburger" aria-label="Abrir menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<nav id="navMenu" aria-label="Menu mobile" aria-hidden="true">
+  <a href="index.html#sobre"        onclick="closeMenu()">Sobre</a>
+  <a href="index.html#mvv"          onclick="closeMenu()">Nossa essência</a>
+  <a href="index.html#produtos"     onclick="closeMenu()">Produtos</a>
+  <a href="index.html#diferenciais" onclick="closeMenu()">Diferenciais</a>
+  <a href="vitrine.html"            onclick="closeMenu()"><i class="fas fa-store"></i> Vitrine online</a>
+  <a href="index.html#contato"      onclick="closeMenu()">Contato</a>
+  <a href="https://wa.me/554936223371" target="_blank" onclick="closeMenu()" class="mob-cta">
+    <i class="fab fa-whatsapp"></i> Fale pelo WhatsApp
+  </a>
+</nav>
+
+<!-- ===== IFRAME ===== -->
+<iframe
+  class="vitrine-frame"
+  src="https://prpindustriaecomerciodeprodutosdelimpeza.egestor.com.br/vitrine/"
+  title="Vitrine Dy Paulo Produtos de Limpeza"
+></iframe>
+
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const navMenu   = document.getElementById('navMenu');
+  hamburger.addEventListener('click', () => {
+    navMenu.classList.toggle('open');
+    hamburger.classList.toggle('ativo');
+    hamburger.setAttribute('aria-expanded', navMenu.classList.contains('open'));
+  });
+  function closeMenu() {
+    navMenu.classList.remove('open');
+    hamburger.classList.remove('ativo');
+    hamburger.setAttribute('aria-expanded', 'false');
+  }
+</script>
+</body>
+</html>

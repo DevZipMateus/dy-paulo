@@ -187,6 +187,18 @@
     .desktop-nav a:hover { color: var(--branco); background: rgba(255,255,255,0.08); }
     .desktop-nav a.active { color: var(--amarelo); }
 
+    .nav-vitrine-link {
+      background: rgba(242,199,68,0.10);
+      color: var(--amarelo) !important;
+      border: 1px solid rgba(242,199,68,0.35);
+      padding: 7px 16px !important;
+      border-radius: 5px;
+      display: inline-flex !important;
+      align-items: center;
+      gap: 6px;
+    }
+    .nav-vitrine-link:hover { background: rgba(242,199,68,0.20) !important; border-color: rgba(242,199,68,0.55); }
+
     .btn-header-wpp {
       background: var(--amarelo);
       color: var(--azul);
@@ -545,6 +557,58 @@
       border-radius: 4px;
     }
 
+    /* ── Vitrine banner ── */
+    .vitrine-banner {
+      margin-top: 48px;
+      background: linear-gradient(135deg, var(--azul) 0%, var(--azul2) 100%);
+      border-radius: var(--radius);
+      padding: 48px 52px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: var(--sombra-lg);
+    }
+    .vitrine-banner::before {
+      content: '';
+      position: absolute;
+      right: -60px; top: -60px;
+      width: 300px; height: 300px;
+      background: radial-gradient(circle, rgba(242,199,68,0.07) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .vitrine-banner-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(242,199,68,0.10);
+      border: 1px solid rgba(242,199,68,0.30);
+      color: var(--amarelo);
+      font-size: 0.70rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 6px 16px;
+      border-radius: 20px;
+      margin-bottom: 14px;
+    }
+    .vitrine-banner h3 {
+      font-family: var(--ff-titulo);
+      font-size: clamp(1.3rem, 2.4vw, 1.75rem);
+      color: var(--branco);
+      margin-bottom: 10px;
+      line-height: 1.25;
+    }
+    .vitrine-banner p {
+      font-size: 0.95rem;
+      color: rgba(255,255,255,0.62);
+      max-width: 520px;
+      line-height: 1.75;
+    }
+    .vitrine-banner .btn { flex-shrink: 0; }
+
     /* ══════════════════════════════════════
        DIFERENCIAIS
     ══════════════════════════════════════ */
@@ -788,28 +852,34 @@
       .container { max-width: 1280px; }
     }
 
+    /* ── 1024px – tablets landscape ── */
     @media (max-width: 1023px) {
       .hero-inner { grid-template-columns: 1fr; gap: 48px; text-align: center; }
       .hero-text h2 { max-width: 100%; margin: 0 auto 12px; }
       .hero-slogan { margin: 0 auto 36px; }
       .hero-btns { justify-content: center; }
       .hero-visual { justify-content: center; }
-      .hero-card { max-width: 360px; }
+      .hero-card { max-width: 380px; }
 
       .sobre-grid { grid-template-columns: 1fr; gap: 48px; }
       .sobre-visual { max-width: 500px; margin: 0 auto; }
 
-      .mvv-grid { grid-template-columns: 1fr; max-width: 480px; }
+      .mvv-grid { grid-template-columns: repeat(3, 1fr); }
 
       .produtos-grid { grid-template-columns: repeat(2, 1fr); }
 
       .dif-grid { grid-template-columns: repeat(2, 1fr); }
 
-      .footer-inner { grid-template-columns: 1fr; gap: 32px; }
-
       #mvv, #sobre, #produtos, #diferenciais, #contato { background-attachment: scroll, scroll; }
     }
 
+    /* ── 900px – tablets portrait / landscape médio ── */
+    @media (max-width: 900px) {
+      .mvv-grid { grid-template-columns: repeat(2, 1fr); }
+      .vitrine-banner { padding: 40px 36px; }
+    }
+
+    /* ── 768px – tablets portrait / mobile largo ── */
     @media (max-width: 768px) {
       :root { --header-h: 66px; }
       .desktop-nav { display: none; }
@@ -828,11 +898,18 @@
       .sobre-badge { bottom: 12px; right: 12px; padding: 16px 18px; }
       .sobre-badge strong { font-size: 1.4rem; }
 
+      .mvv-grid { grid-template-columns: 1fr; }
+      .footer-inner { grid-template-columns: 1fr; gap: 32px; }
+
       .contato-grid { grid-template-columns: 1fr; }
       .contato-card.full { grid-column: span 1; }
       .contato-mapa iframe { height: 300px; }
+
+      .vitrine-banner { flex-direction: column; align-items: flex-start; padding: 36px 28px; gap: 28px; }
+      .vitrine-banner p { max-width: 100%; }
     }
 
+    /* ── 480px – mobile ── */
     @media (max-width: 480px) {
       :root { --header-h: 60px; }
       .container { padding: 0 16px; }
@@ -848,15 +925,23 @@
       .produtos-grid { grid-template-columns: 1fr; }
       .prod-img { height: 180px; }
 
-      .dif-grid { grid-template-columns: 1fr; max-width: 340px; margin: 0 auto; }
+      .dif-grid { grid-template-columns: 1fr; }
+
+      .vitrine-banner { padding: 28px 20px; gap: 24px; }
+      .vitrine-banner h3 { font-size: 1.2rem; }
+      .vitrine-banner .btn { width: 100%; justify-content: center; }
 
       .wa-float { bottom: 16px; right: 14px; width: 50px; height: 50px; }
       .wa-float i { font-size: 1.4rem; }
     }
 
+    /* ── 360px – mobile pequeno ── */
     @media (max-width: 360px) {
+      :root { --header-h: 58px; }
       .hero-card-stat strong { font-size: 1.2rem; }
       .contato-card { padding: 16px 18px; }
+      .mvv-card { padding: 28px 20px; }
+      .dif-card { padding: 28px 16px; }
     }
   </style>
 </head>
@@ -875,6 +960,7 @@
         <li><a href="index.html#mvv">Nossa essência</a></li>
         <li><a href="index.html#produtos">Produtos</a></li>
         <li><a href="index.html#diferenciais">Diferenciais</a></li>
+        <li><a href="vitrine.html" class="nav-vitrine-link"><i class="fas fa-store"></i> Vitrine</a></li>
         <li><a href="index.html#contato">Contato</a></li>
       </ul>
     </nav>
@@ -896,6 +982,7 @@
   <a href="index.html#mvv"          onclick="closeMenu()">Nossa essência</a>
   <a href="index.html#produtos"     onclick="closeMenu()">Produtos</a>
   <a href="index.html#diferenciais" onclick="closeMenu()">Diferenciais</a>
+  <a href="vitrine.html"            onclick="closeMenu()"><i class="fas fa-store"></i> Vitrine online</a>
   <a href="index.html#contato"      onclick="closeMenu()">Contato</a>
   <a href="https://wa.me/554936223371" target="_blank" onclick="closeMenu()" class="mob-cta">
     <i class="fab fa-whatsapp"></i> Fale pelo WhatsApp
@@ -919,6 +1006,9 @@
         </a>
         <a href="index.html#produtos" class="btn btn-outline-branco">
           <i class="fas fa-box-open" aria-hidden="true"></i> Ver produtos
+        </a>
+        <a href="vitrine.html" class="btn btn-outline-branco">
+          <i class="fas fa-store" aria-hidden="true"></i> Vitrine online
         </a>
       </div>
     </div>
@@ -1092,6 +1182,18 @@
       </div>
 
     </div>
+
+    <!-- ── Vitrine ── -->
+    <div class="vitrine-banner reveal">
+      <div>
+        <span class="vitrine-banner-badge"><i class="fas fa-store"></i> Catálogo online</span>
+        <h3>Explore o catálogo completo na nossa vitrine</h3>
+        <p>Veja todos os produtos disponíveis com fotos, descrições e informações em tempo real. Encontre o que você precisa e fale conosco para fechar o pedido!</p>
+      </div>
+      <a href="vitrine.html" class="btn btn-amarelo">
+        <i class="fas fa-store" aria-hidden="true"></i> Acessar a vitrine
+      </a>
+    </div>
   </div>
 </section>
 
@@ -1219,6 +1321,7 @@
           <li><a href="index.html#sobre">Sobre</a></li>
           <li><a href="index.html#produtos">Produtos</a></li>
           <li><a href="index.html#diferenciais">Diferenciais</a></li>
+          <li><a href="vitrine.html">Vitrine</a></li>
           <li><a href="index.html#contato">Contato</a></li>
         </ul>
       </div>
